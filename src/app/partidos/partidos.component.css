@@ -1,0 +1,9 @@
+.recuadroFechas{
+  border: black solid 1px;
+}
+.recuadroFechasHeader{
+  font-size: 18px;
+  font-weight: bold;
+  background-color: gray;
+  color: white;
+}

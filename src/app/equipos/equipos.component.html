@@ -1,0 +1,16 @@
+
+<div class="row">
+  <label>
+    <input [(ngModel)]="nombreEquipo" placeholder="Nombre nuevo equipo">
+    <button (click)="addEquipo()">Agregar Equipo</button>
+  </label>
+</div>
+
+<div class="row" *ngIf="equipos.length > 0">
+  <h2>Listado de Equipos</h2>
+  <ul class="heroes">
+    <li *ngFor="let _equipo of equipos; let i = index">
+      <span class="badge">{{_equipo.name}}</span><a (click)="deleteEquipo(i)"><img class="icon icons8-Delete" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAA1klEQVRIie2U0Q2DMAxE30iMwEZlE7IR2QA2KBuQDehPIhmXgJMipEpY8gdW8OPuIuCpf60G6IFBdB/nlywfgPWgh19gLbCcAFIv8XyxAitAgooUefHyBHRAUEtDnE9srTOrkMs6MU+gIL66U+dNahx5GxpgVs/aVmeBeGx+53LztZA1KpA1Z85VQ2QGUom+DGaIzkQCGuCtnjXIlMnR7UoZyIyqbhdsLRuBF98hL3E+UmiVVLPn91Hv5XZabQEoUPHvkor8CcDXKMjBXFyY2l21/Kn76wNQPrKwZT3+GAAAAABJRU5ErkJggg==" width="25" height="25"></a>
+    </li>
+  </ul>
+</div>

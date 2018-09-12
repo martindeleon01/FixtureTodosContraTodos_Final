@@ -1,0 +1,40 @@
+<div class="row" *ngIf="equipos.length >= 4 && equipos.length <= 20">
+  <div class="row">
+    <div class="col-md-9">
+        <h3>Partidos</h3>
+    </div>
+    <div class="col-md-3">
+        <span class="float-right">
+        <button type="button" [disabled]="equipos.length < 4 || equipos.length > 20 || equipos.length % 2 == 1" (click)="sorteoFechas()">Sortear</button>
+      </span>
+    </div>
+  </div>
+  <div class="row" *ngIf="equipos.length < 4 || equipos.length > 20 || equipos.length % 2 == 1">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            <strong>Para sortear el fixture</strong><br> el numero de equipos debe ser par y nunca menor a 4 y o mayor a 20.
+        </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="fechas.length == 0 && equipos.length >= 4 && equipos.length <= 20 && equipos.length % 2 == 0">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Haga click en "Sortear" para realizar el sorteo.</strong>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <div *ngFor="let ronda of fechas; let i = index" class="recuadroFechas">
+            <div class="recuadroFechasHeader">
+                Fecha {{i + 1}}
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-6" *ngFor="let partido of fechas[i]">{{ partido }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
